@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Games</title></head>
+<body style="width: 680px;"><div style="text-align: center;"><big><big><span style="font-weight: bold;">Games </span></big></big><br></div><div style="text-align: center;">(Main file name: games) <br></div><br>You have decided to come to a block party in Brooklyn, where there are n game booths G<small><small>1</small></small>, G<small><small>2</small></small>, ..., G<small><small>n</small></small>
+from one end of the street to the other. You want to play&nbsp;all of
+the games in the order from G<small><small>1</small></small> to&nbsp; G<small><small>n</small></small> without skipping any. The games are not free, and each game
+costs 1 token to play once. You can play a game as many times as you
+can, as long as you have enough tokens. Your pocket can hold at most T
+tokens, and the pocket is full in the beginning. After you finish one
+game G<small><small>i</small></small> and before you start G<small><small>i+1</small></small>,
+you will be refilled with&nbsp;K tokens. However, since the capacity of&nbsp;your pocket is T, any extra tokens will be wasted.<br><br>Some
+games are more fun than others. For each game Gi, you have an integer
+value Vi that indicates how fun this game is to you. For a game that
+you
+don't enjoy, the value can be negative. Note that you have to play each
+game at least once, even if the game is not fun to you. The&nbsp;total fun
+you gain from a game is the number of times you play the game times the
+fun value. You want to manage your tokens so that you gain the most fun
+from the games.<br><br><br><h2>Input&nbsp;Formats</h2>
+An input file for LP systems contains a fact of the form num(N), which
+specifies
+the number of games N (4&nbsp;&#8804;  N &#8804;  10), a fact of the form cap(T),
+which means that&nbsp;the capacity of your pocket is T
+(3&nbsp;&#8804;  T&nbsp;&#8804;  10), a fact of the form refill(K), which gives the number
+to tokens you receive after each game booth (0 &lt; K&nbsp;&#8804; &nbsp;T); N facts of the form
+fun(i,Vi), which indicates that the fun value of game Gi is Vi
+(1&nbsp;&#8804;  i&nbsp;&#8804;  N, -10&nbsp;&#8804;  Vi &nbsp;&#8804; 10).<br><br>An input file for Minizinc specifies
+the following constants: num, the
+number of games N; cap, the capacity of your pocket; refill, the number
+of tokens you receive after each game booth; fun, an&nbsp;array of fun
+values of the N games.<br><br><h2 class="main">Output format</h2>The output should
+contain exactly one fact of the form total_fun(V), where V is the maximum fun you can gain from playing these games. &nbsp;For
+ASP systems, the output may consist of multiple answer sets,&nbsp;and only the final one is treated as a solution.<br><br><h2 class="main">Samples</h2><span class="style1"><span style="font-weight: bold;"></span></span> <span class="style1"><span style="font-weight: bold;"><br></span></span><table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2"><tbody><tr><td style="text-align: center;">LP Input</td><td style="text-align: center;">Minizinc Input</td><td style="text-align: center;">Output</td></tr><tr><td>num(4).<br>cap(5).<br>refill(2).<br>fun(1,4).<br>fun(2,1).<br>fun(3,2).<br>fun(4,3).<br></td><td>num =&nbsp;4;<br>cap = 5;<br>refill = 2;<br>fun = [4,1,2,3];<br></td><td>total_fun(35).<br></td></tr><tr><td>num(4).<br>cap(5).<br>refill(2).<br>fun(1,4).<br>fun(2,-1).<br>fun(3,-2).<br>fun(4,3).<br></td><td>num =&nbsp;4;<br>cap = 5;<br>refill = 2;<br>fun = [4,-1,-2,3];</td><td>total_fun(29).</td></tr><tr><td> num(5).<br>cap(3).<br>refill(2).<br>fun(1,4).<br>fun(2,1).<br>fun(3,-2).<br>fun(4,3).<br>fun(5,4).</td><td>num = 5;<br>cap = 3;<br>refill = 2;<br>fun = [4,1,-2,3,4];</td><td>total_fun(30).</td></tr></tbody></table><br></body></html>
