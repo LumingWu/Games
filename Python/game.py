@@ -22,7 +22,7 @@ def total_fun_recursion(game, token, fun, played):
                 if token + g.K > g.T:
                     return total_fun_recursion(game + 1, g.T, fun, False)
                 return total_fun_recursion(game + 1, token + g.K, fun, False)
-            return 0
+            return float("-inf")
         return fun         
     if played and game < g.N:
         if token + g.K > g.T:
